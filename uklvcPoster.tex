@@ -160,6 +160,7 @@ In a population of assigned-female-at-birth and female-identifying participants,
 %------------------------------------------------
 \subsection{Methods}
 \begin{itemize}
+	\item N = 10 women (AFAB and female-identified), aged 18 to 22.
 	\item All participants native speakers from the Tyneside dialect area (all within 20 miles of Newcastle, most closer).
 	\item Standard sociolinguistic interviews, controlled for topics, recorded with either a, H1 or H4 Zoom.
 	\item 2D/4D measurements made either physically on hands and with tracings (for 1st cohort), or from photocopies (2nd cohort). (Photocopies were found to be the second most reliable measurement technique for 2D/4D by \citealt{allawayetal2009})
@@ -173,29 +174,37 @@ In a population of assigned-female-at-birth and female-identifying participants,
 
 \section*{Results}
 
-The 2D/4D digit ratio is \textbf{as good a predictor} for the frequency of \textsl{um/uh} pause fillers in this dataset \textbf{as male vs. female sex is in other corpora}.
 
 
 %ADD IN RESULTS FROM THE EMAIL FROM JOE HERE 
-
-
-
+The 2D/4D digit ratio is nearly \textbf{as good a predictor} for the frequency of \textsl{um/uh} pause fillers in this dataset \textbf{as male vs. female sex} is in large spoken corpora.
+\begin{center}
+\noindent\textbf{Interpretation: less pre-natal testosterone $\rightarrow$ more \textsl{um}.}
+\end{center}
 \begin{wraptable}{l}{12cm} % Left or right alignment is specified in the first bracket, the width of the table is in the second
-\begin{tabular}{l l l}
+\begin{tabular}{l c}
 \toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\textbf{Sample} & \textbf{Effect Size}\\
 \midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
+Sex, HCRC Maptask & 2.3\\
+Sex, Fischer Corpus & 1.37\\
+Sex, PNC & 1.31\\
+\textbf{Finger Ratio, our Pilot 1} & \textbf{1.17}\\
+Sex, Switchboard Corpus & 1.03\\
+Sex, British national Corpus & 0.45\\
 \bottomrule
 \end{tabular}
-\captionof{table}{\color{Green} Table caption}
+\captionof{table}{\color{Green} This effect size against the female effect size in other Spoken English corpora (source for latter: Wieling et al \textsl{forthcoming})}
 \end{wraptable}
-%
-Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
 
-Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin.
+To scale the ratio so that larger ratios don't unduly affect the model, we used the measure $log_1.2(ratio)$. Thus, the effect size is difference between a 1:1 ratio to a 1.2:1 ratio (the largest ratio in the data).
+
+Finger ratio effect size, and 95\% CI based on 1000 bootstrap replicates (CI excludes 0): 1.17 (0.34, 2.17):
+
+A mixed effects logistic model containing the finger ratio has a smaller AIC, and a significant likelihood ratio test.
+
+Probably due to the small sample size, a permutation test (randomly permuting subjects' finger ratios) isn't significant, p = 0.163, and model excluding ratio has a smaller BIC.
+
 
 \begin{center}\vspace{1cm}
 \includegraphics[width=0.8\linewidth]{placeholder}
@@ -229,12 +238,29 @@ Vivamus sed nibh ac metus tristique tristique a vitae ante. Sed lobortis mi ut a
 \section*{Future Research}
 
 \subsection{Pilot Study 2}
-
-More Tyneside speakers, continuous measure of gender identity.
+\begin{itemize}
+\item More Tyneside speakers, continuous measure of gender identity.
+\item A better, continuous self-report task for gender identity:
+\end{itemize}
+%insert picture of the new task
+\begin{itemize}
+\item Scan 2D/4D and use digital calipers with GNU Image Modification Package \citep[][]{allawayetal2009}.
+\end{itemize}
 
 \subsection{Large-scale study}
 
-ALSPAC, etc. - mostly take from Joel's York talk
+%ALSPAC, etc. - mostly take from Joel's York talk
+
+\begin{itemize}
+	\item Similar to above, esp. regarding continuous gender report, but...
+	\item A sample of 200 participants from the Avon Longitudinal Study of Parents and Children \citep[ALSPAC][]{alspac2001}
+	\item Assays for maternal T and estradiol. (To the extent possible, we will sample the same participants studied in \citealt{hinesetal2002}). 
+	\item Standard sociolinguistic interview procedures, with semi-automatic extraction of changes in progress from transcribed audio:
+	\begin{itemize}
+		\item Categorical change from below: \textsl{um/uh}
+		\item Some below-consciousness phonetic and phonological variables (maybe production and perception), e.g. /uw/-fronting, pre aspiration, ...
+	\end{itemize}
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
