@@ -26,7 +26,7 @@
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
-\usepackage{times} % Use the times font
+%\usepackage{times} % Use the times font
 %\usepackage{palatino} % Uncomment to use the Palatino font
 
 \usepackage{graphicx} % Required for including images
@@ -53,7 +53,7 @@
 \begin{minipage}[b]{0.70\linewidth}
 \veryHuge \color{NavyBlue} \textbf{Gender and linguistic variation:} \color{Black}\\ % Title
 \Huge\textit{a role for hormonal organising effects}\\[2cm] % Subtitle
-\huge \textbf{Anne-marie Karatzenis, Josef Fruehwald, Danielle Turton, \vspace*{5mm}\\\& Joel C. Wallenberg}\\[0.5cm] % Author(s)
+\huge \textbf{Anne-marie Karatzenis, Josef Fruehwald, Danielle Turton \\\& Joel C. Wallenberg}\\[0.5cm] % Author(s)
 \huge Newcastle University and University of Edinburgh \\[0.4cm] % University/organization
 \Large \texttt{joel.wallenberg@ncl.ac.uk}\\
 \end{minipage}
@@ -142,10 +142,18 @@ Below we describe a small, completed pilot study, a larger pilot study in progre
 
 \subsection*{The Filled Pause Change in Progress}
 
+%\begin{multicols}{2}
+\begin{minipage}[b]{0.6\linewidth}
 \begin{center}\vspace{1cm}
-\includegraphics[width=0.6\linewidth]{um.png}
+\includegraphics[width=.85\linewidth]{um.png}
+\end{center}
+\end{minipage}
+\begin{minipage}[b]{0.3\linewidth}
+\begin{center}
 \captionof{figure}{\color{Green} Replacement of \textsl{uh} by \textsl{um} in the Philadelphia Neighborhood Corpus \citep{labovrosenfelder2011}, N = 308 speakers}
-\end{center}\vspace{1cm}
+\end{center}
+\end{minipage}
+%\end{multicols}
 
 \subsection*{A Proxy for Perinatal T: 2D/4D ratio}
 
@@ -214,7 +222,7 @@ The 2D/4D digit ratio is nearly \textbf{as good a predictor in our all-female sa
 \begin{center}
 \noindent\textbf{Interpretation: less pre-natal testosterone $\rightarrow$ more \textsl{um}.}
 \end{center}
-\begin{wraptable}{l}{12.5cm} % Left or right alignment is specified in the first bracket, the width of the table is in the second
+\begin{wraptable}{l}{13.9cm} % Left or right alignment is specified in the first bracket, the width of the table is in the second
 \begin{tabular}{l c}
 \toprule
 \textbf{Sample} & \textbf{Effect Size}\\
@@ -224,7 +232,7 @@ Sex, Fischer Corpus & 1.37\\
 Sex, PNC & 1.31\\
 \textbf{Finger Ratio, our Pilot 1} & \textbf{1.17}\\
 Sex, Switchboard Corpus & 1.03\\
-Sex, British national Corpus & 0.45\\
+Sex, British National Corpus & 0.45\\
 \bottomrule
 \end{tabular}
 \captionof{table}{\color{Green} This effect size against the female effect size in other Spoken English corpora (source for latter: Wieling et al \textsl{forthcoming})}
@@ -247,23 +255,26 @@ Probably due to the small sample size, a permutation test (randomly permuting su
 
 \section*{Future Research}
 
+\begin{multicols}{2}
 \subsection*{Pilot Study 2}
 \begin{itemize}
-\item More Tyneside speakers, continuous measure of gender identity.
-\item A better, continuous self-report task for gender identity:
-\end{itemize}
-%insert picture of the new task
-\begin{itemize}
+\item More Tyneside speakers.
 \item Self-report as ``tomboy''
 \item Scan 2D/4D and use digital calipers with GNU Image Modification Package \citep[][]{allawayetal2009}.
+\item A better, continuous self-report task for gender identity:
 \end{itemize}
 
+\begin{center}
+  \includegraphics[width=1\linewidth]{scale.png}
+  \end{center}
+  
+\end{multicols}
 \subsection*{Large-scale study}
 
 %ALSPAC, etc. - mostly take from Joel's York talk
 
 \begin{itemize}
-	\item Similar to above, esp. regarding continuous gender report, but...
+	\item As above, esp. regarding continuous gender report, but...
 	\item 200 participants from ALSPAC, with poor assays for maternal T and estradiol. 
 	\item Standard sociolinguistic interview procedures, with semi-automatic extraction of changes in progress from FAVE-aligned transcriptions:
 	\begin{itemize}
@@ -299,7 +310,7 @@ Probably due to the small sample size, a permutation test (randomly permuting su
  %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
-
+\end{multicols}
 %\nocite{*} % Print all references regardless of whether they were cited in the poster or not
 \bibliographystyle{linquiry2} % Plain referencing style
 \bibliography{posterrefs} % Use the example bibliography file sample.bib
@@ -314,5 +325,5 @@ Most thanks to our two RAs, Claire Cochrane and Caitlin Halfacre. Thanks also go
 
 %----------------------------------------------------------------------------------------
 
-\end{multicols}
+
 \end{document}
