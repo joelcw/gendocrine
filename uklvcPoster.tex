@@ -39,6 +39,13 @@
 \usepackage{hyperref}
 \usepackage{wrapfig}
 
+\usepackage{titlesec}
+
+\titleformat*{\section}{\Huge\bfseries}
+\titleformat*{\subsection}{\LARGE\bfseries}
+\titleformat*{\subsubsection}{\Large\bfseries}
+
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -62,9 +69,10 @@
 \includegraphics[width=11cm]{ncltitle2.jpg}\includegraphics[width=11cm]{edin.jpg}\\
 \end{minipage}
 
-\vspace{1cm} % A bit of extra whitespace between the header and poster content
+%\vspace{1cm} % A bit of extra whitespace between the header and poster content
 
 %----------------------------------------------------------------------------------------
+
 
 \begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
 
@@ -72,225 +80,179 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\color{Navy} % Navy color for the abstract
-
-\begin{abstract}
-
-Below we describe a small, completed pilot study, a larger pilot study in progress, and a future large-scale investigation into whether there is an endocrine basis for differential production of linguistic variants by gender. While results are preliminary, our initial pilot shows that prenatal testosterone, as measured by the 2D/4D digit ratio, is likely to affect the frequencies of linguistic variants a person produces in naturalistic, running speech.
-
-\end{abstract}
-
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-
-\color{SaddleBrown} % SaddleBrown color for the introduction
-
 \section*{Introduction}
 
+\color{Navy} % Navy color for the abstract
+\subsection*{Known:}
+\Large
+Women tend to lead language change from below.
 
-\textbf{Gender:} part of a person's internal sense of self, usually related to social roles, and probably related to brain structures.\\
-\textbf{Sex:} a rough description of a person's physical primary and secondary sexual characteristics, generally excluding the brain (in reference to humans).
+\color{SaddleBrown}
+\subsection*{Why?}
+
+Answers Vary (e.g. \citealt{labov2001, eckert2011}).
+
+\color{Navy}
+\subsection*{A Problem}
 
 \begin{itemize}
-		\item \textbf{Linguistic sex/gender effects:} it is well known that speaker-sex has a stochastic effect on the frequency with which linguistic variants are used, with women leading changes from below.
-		\item \textbf{Hormonal Organising Effects:} the action of sex steroids, during the critical period for sexual differentiation 
-		(\textsl{in utero}, esp. weeks 8-24 for humans), affecting primary/secondary sex characteristics, and gender:
-			\begin{itemize}
-				\item Behaviour: mating behaviours in mammals, sexuality and gender identity in humans, pair-bonding and other behaviours in birds.
-				\item Brain morphology: e.g. the sexually-dimorphic nucleus of the pre-optic area in mammals, including humans, with a correlate in birds; also e.g. parts of the avian song system \citep[][]{balthazartetal2009}.
-				\item Not to be confused with hormone activational, or circulating, effects, which are often independent.
-			\end{itemize}
-	\end{itemize}
+	\item Most macro-level studies of language change assume a gender binary.
+	\item Most research that doesn't assume a gender binary doesn't address itself to macro-level language change (e.g. \citet{zimmanetal2014}).
+\end{itemize}
 
+%Below we describe a small, completed pilot study, a larger pilot study in progress, and a future large-scale investigation into whether there is an endocrine basis for differential production of linguistic variants by gender. While results are preliminary, our initial pilot shows that prenatal testosterone, as measured by the 2D/4D digit ratio, is likely to affect the frequencies of linguistic variants a person produces in naturalistic, running speech.
+
+
+\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+\subsection*{Sociobiology}
+
+There is a growing literature on the connection between fetal testosterone exposure (hormonal organising effects) and gender identity \citep{hinesetal2004, berenbaumbailey2003}, and gendered behaviour \citep{hinesetal2002, auyeungetal2009}. See \citet{hines2006, balthazart2011} for reviews, and related work on sexuality.
+
+
+%\textbf{Gender:} part of a person's internal sense of self, usually related to social roles, and probably related to brain structures.\\
+%\textbf{Sex:} a rough description of a person's physical primary and secondary sexual characteristics, generally excluding the brain (in reference to humans).
+%
+%\begin{itemize}
+%		\item \textbf{Linguistic sex/gender effects:} it is well known that speaker-sex has a stochastic effect on the frequency with which linguistic variants are used, with women leading changes from below.
+%		\item \textbf{Hormonal Organising Effects:} the action of sex steroids, during the critical period for sexual differentiation 
+%		(\textsl{in utero}, esp. weeks 8-24 for humans), affecting primary/secondary sex characteristics, and gender:
+%			\begin{itemize}
+%				\item Behaviour: mating behaviours in mammals, sexuality and gender identity in humans, pair-bonding and other behaviours in birds.
+%				\item Brain morphology: e.g. the sexually-dimorphic nucleus of the pre-optic area in mammals, including humans, with a correlate in birds; also e.g. parts of the avian song system \citep[][]{balthazartetal2009}.
+%				\item Not to be confused with hormone activational, or circulating, effects, which are often independent.
+%			\end{itemize}
+%	\end{itemize}
+%
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
 %----------------------------------------------------------------------------------------
 
-\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
-
-\section*{Research Questions}
 
 
-\begin{enumerate}
-\item Is gender, understood as a non-binary continuum, a better predictor for the frequencies of linguistic variants than sex?
-\item Is there a sociobiological explanation for the reported sex effect in change from below (contra, e.g. \citealt{labov2001, eckert2011}) ?
-	\begin{itemize}
-		\item And is it, in reality, a continuous gender effect rather than sex?
-	\end{itemize}
-\item Can we add to existing evidence that there is a continuous biological basis for the continuum of gender identity?
-	\begin{itemize}
-	\item Is linguistic production more closely correlated with both biological gender and a nuanced notion of gender identity than other behaviours (e.g. sexuality)?
-	\end{itemize}
-
-
-\end{enumerate}
-
-\section*{Background}
-\subsection*{A biological basis for gender}
-
-
+\section*{This Study}
 
 \begin{itemize}
-	\item \citet{hinesetal2004}: Congenital Adrenal Hyperplasia (CAH) in XX, AFAB individuals has a significant effect on both sexuality and less female-typical/identifying gender identity both in childhood and adulthood, compared to controls.
-	\item \citet{berenbaumbailey2003}: CAH and parents' identification of ``tomboy'' were significant predictors of gender identity in XX, AFAB individuals aged 18 and younger. (Interestingly, genitial appearance was not, even when partly masculinized.)
-	\item \citet{hinesetal2002}: In a non-clinical population (Avon Longitudinal Study of Parents and Children, ALSPAC \citealt{alspac2001}), found significant effect of maternal testosterone on childhood gender-role behaviour in XX, AFAB individuals aged 3.5, as assessed by the Pre-School Activities Index.
-	\item \citet{auyeungetal2009} confirmed \citet{hinesetal2002}'s results predicting PSAI with amniotic fluid samples, gestation weeks 11-21, sample of 112 male, 100 female.
-	\item Many other human and animal studied have found relationships between perinatal T and gendered behaviour or sexuality \citep[see][for reviews]{hines2006, balthazart2011}.
+	\item We interviewed 10 speakers who would be classified as belonging to just one sex/gender group in most sociolinguistic studies (age matched assigned-female-at-birth and female-identifying).
+	\item We analyzed gender according to a continuous measure known to correlate with fetal testosterone exposure (index finger:ring finger ratio).
+	\item We looked for a correlation between this continuous gender variation and inter-speaker differences for a change in progress.
 \end{itemize}
+
+\subsection*{2D:4D Ratio}
+Generally (in humans and non-humans):
+
+\begin{itemize}
+	\item smaller ratio, greater perinatal Testosterone exposure.
+	\item larger ratio, less perinatal Testosterone exposure.
+\end{itemize}
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{realhands.png}
+\end{center}\vspace{1cm}
+
 
 \subsection*{The Filled Pause Change in Progress}
-
-%\begin{multicols}{2}
-\begin{minipage}[b]{0.6\linewidth}
-\begin{center}\vspace{1cm}
-\includegraphics[width=.85\linewidth]{um.png}
-\end{center}
+\begin{minipage}[c]{0.70\linewidth}
+\includegraphics[width=1\linewidth]{um.pdf}
 \end{minipage}
-\begin{minipage}[b]{0.3\linewidth}
-\begin{center}
-\captionof{figure}{\color{Green} Replacement of \textsl{uh} by \textsl{um} in the Philadelphia Neighborhood Corpus \citep{labovrosenfelder2011}, N = 308 speakers}
-\end{center}
+%
+\begin{minipage}[c]{0.25\linewidth}
+\large
+When speakers use a filled pause, they are more likely to use ``um" than they used to be  (Wieling et al, \textsl{forthcoming}).
 \end{minipage}
-%\end{multicols}
-
-\subsection*{A Proxy for Perinatal T: 2D/4D ratio}
-
-
-%INSERT PICTURE FROM BALTHAZART, OR OF MY OWN HANDS
-%\begin{wrapfigure}{l}{0.3\linewidth}
-%  \begin{center}
-%  \includegraphics[width=0.3\linewidth]{balthazart108hands.png}
-%  \end{center}
-%  \caption{Birds}
-%\end{wrapfigure}
 
 
 
-%\begin{minipage}[.5\textheight]{\textwidth}
 
-\begin{multicols}{2}
-
-\begin{itemize}
-	\item Broadly speaking, female ratios closer to 1, on average around 0.973, and male ratios smaller, average: 0.955 \citep[][107]{balthazart2011}.
-	
-	\item Sexual orientation: see extensive references in \citet{balthazart2011}, as well as rat models.
-	\item 2D/4D difference in ``butch'' vs. ``femme'' self-report (gender?) in self-identified lesbians, with ``femme'' non-distinct from straight controls, but ``butch'' more masculinized \citep{brownetal2002}
-	\item Experimentally manipulated in Wistar rats: maternal testosterone manipulation and direct pre-natal manipulation results in lower 2D/4D ratios in female rats, and also behavioral similarities to male rats in open field motor activity\citep{talarovicovaetal2009}.
-\end{itemize}
-%\end{minipage}
-
-%\begin{minipage}[0.2\textheight]{0.2\textwidth}
-\begin{center}
-  \includegraphics[width=0.5\linewidth]{balthazart108hands.png}
-  \end{center}
-\end{multicols}
 %\end{minipage}
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
 %----------------------------------------------------------------------------------------
 
-\section*{Pilot Study}
-
-%\subsection*{Hypothesis}
-
-In a population of assigned-female-at-birth and female-identifying participants, controlled for age, location, and SEC, the 2D/4D ratio will be a strong predictor of the frequency of filled pause variants in naturalistic speech.
-
-%------------------------------------------------
-\subsection*{Methods}
-\begin{itemize}
-	\item N = 10 women (AFAB and female-identified), aged 18 to 22.
-	\item All participants native speakers from the Tyneside dialect area (all within 20 miles of Newcastle, most closer).
-	\item Standard sociolinguistic interviews, controlled for topics, recorded with either a, H1 or H4 Zoom.
-	\item 2D/4D measurements made either physically on hands and with tracings (for 1st cohort), or with digital Vernier calipers from photocopies (2nd cohort). (Photocopies were found to be the second most reliable measurement technique for 2D/4D by \citealt{allawayetal2009})
-	%BASAL CREASE? KNUCKLE?
-\end{itemize}
-
-
-%----------------------------------------------------------------------------------------
-%	RESULTS 
-%----------------------------------------------------------------------------------------
-
 \section*{Results}
 
+\begin{minipage}[c]{0.70\linewidth}
+\includegraphics[width=1\linewidth]{finger_effect.pdf}
+\end{minipage}
+%
+\begin{minipage}[c]{0.25\linewidth}
+\large
+Preliminary results suggest that greater 2D:4D ratio (less testosterone exposure) is correlated with more advanced UM usage.
+\end{minipage}
 
-
-%ADD IN RESULTS FROM THE EMAIL FROM JOE HERE 
-The 2D/4D digit ratio is nearly \textbf{as good a predictor in our all-female sample} for the frequency of \textsl{um/uh} pause fillers  \textbf{as male vs. female sex} is in large spoken corpora.
 \begin{center}
 \noindent\textbf{Interpretation: less pre-natal testosterone $\rightarrow$ more \textsl{um}.}
 \end{center}
-\begin{wraptable}{l}{13.9cm} % Left or right alignment is specified in the first bracket, the width of the table is in the second
-\begin{tabular}{l c}
+
+\subsection*{Stats}
+1000 bootstrap replicates produce a CI that excludes 0: (0.34, 2.17), but a permutation test yields $p$ = 0.163.
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+	model & AIC & BIC & LR p-value\\
+	\cmidrule{2-4}
+without ratio & 292.04 & 316.39 & -- \\
+with ratio &  289.11 & 317.52 & 0.03\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Effect size in the same order of magnitude as female effect in other spoken corpora.
+\begin{center}
+\begin{tabular}{l r}
 \toprule
 \textbf{Sample} & \textbf{Effect Size}\\
 \midrule
-Sex, HCRC Maptask & 2.3\\
-Sex, Fischer Corpus & 1.37\\
-Sex, PNC & 1.31\\
+Female effect, HCRC Maptask & 2.3\\
+Female effect,Fischer Corpus & 1.37\\
+Female effect, PNC & 1.31\\
 \textbf{Finger Ratio, our Pilot 1} & \textbf{1.17}\\
-Sex, Switchboard Corpus & 1.03\\
-Sex, British National Corpus & 0.45\\
+Female effect, Switchboard Corpus & 1.03\\
+Female effect, British National Corpus & 0.45\\
 \bottomrule
 \end{tabular}
-\captionof{table}{\color{Green} This effect size against the female effect size in other Spoken English corpora (source for latter: Wieling et al \textsl{forthcoming})}
-\end{wraptable}
-
-To scale the ratio so that larger ratios don't unduly affect the model, we used the measure $log_1.2(ratio)$. Thus, the effect size is difference between a 1:1 ratio to a 1.2:1 ratio (the largest ratio in the data).
-
-Finger ratio effect size, and 95\% CI based on 1000 bootstrap replicates (CI excludes 0): 1.17 (0.34, 2.17):
-
-A mixed effects logistic model containing the finger ratio has a smaller AIC, and a significant likelihood ratio test.
-
-Probably due to the small sample size, a permutation test (randomly permuting subjects' finger ratios) isn't significant, p = 0.163, and model excluding ratio has a smaller BIC.
+\end{center}
 
 
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{\color{Green} Figure caption}
-\end{center}\vspace{1cm}
-
-
-\section*{Future Research}
-
-\begin{multicols}{2}
-\subsection*{Pilot Study 2}
-\begin{itemize}
-\item More Tyneside speakers.
-\item Self-report as ``tomboy''
-\item Scan 2D/4D and use digital calipers with GNU Image Modification Package \citep[][]{allawayetal2009}.
-\item A better, continuous self-report task for gender identity:
-\end{itemize}
-
-\begin{center}
-  \includegraphics[width=1\linewidth]{scale.png}
-  \end{center}
-  
-\end{multicols}
-\subsection*{Large-scale study}
-
-%ALSPAC, etc. - mostly take from Joel's York talk
-
-\begin{itemize}
-	\item As above, esp. regarding continuous gender report, but...
-	\item 200 participants from ALSPAC, with poor assays for maternal T and estradiol. 
-	\item Standard sociolinguistic interview procedures, with semi-automatic extraction of changes in progress from FAVE-aligned transcriptions:
-	\begin{itemize}
-		\item Categorical change from below: \textsl{um/uh}
-		\item Some below-consciousness phonetic and phonological variables (maybe production and perception), e.g. /uw/-fronting, pre aspiration, ...
-	\end{itemize}
-	\begin{center}
-\begin{itemize}
-\item If linguistic variables are learnt differentially depending on how masculinised brain structures have been by pre-natal androgen levels, then:
-\end{itemize}
-\end{center} 
-\begin{itemize}
-	\item Within a given sex cohort (i.e. genital-sex, or sex designated at birth), more advanced linguistic variants correspond to lower levels of pre-natal T, and perhaps other androgens (esp. women).
-	\item If the gender effect in language is purely social, then we should see no effect of hormones within each sex (only between sexes).
-\end{itemize}
-\end{itemize}
+%\section*{Future Research}
+%
+%\begin{multicols}{2}
+%\subsection*{Pilot Study 2}
+%\begin{itemize}
+%\item More Tyneside speakers.
+%\item Self-report as ``tomboy''
+%\item Scan 2D/4D and use digital calipers with GNU Image Modification Package \citep[][]{allawayetal2009}.
+%\item A better, continuous self-report task for gender identity:
+%\end{itemize}
+%
+%\begin{center}
+%  \includegraphics[width=1\linewidth]{scale.png}
+%  \end{center}
+%  
+%\end{multicols}
+%\subsection*{Large-scale study}
+%
+%%ALSPAC, etc. - mostly take from Joel's York talk
+%
+%\begin{itemize}
+%	\item As above, esp. regarding continuous gender report, but...
+%	\item 200 participants from ALSPAC, with poor assays for maternal T and estradiol. 
+%	\item Standard sociolinguistic interview procedures, with semi-automatic extraction of changes in progress from FAVE-aligned transcriptions:
+%	\begin{itemize}
+%		\item Categorical change from below: \textsl{um/uh}
+%		\item Some below-consciousness phonetic and phonological variables (maybe production and perception), e.g. /uw/-fronting, pre aspiration, ...
+%	\end{itemize}
+%	\begin{center}
+%\begin{itemize}
+%\item If linguistic variables are learnt differentially depending on how masculinised brain structures have been by pre-natal androgen levels, then:
+%\end{itemize}
+%\end{center} 
+%\begin{itemize}
+%	\item Within a given sex cohort (i.e. genital-sex, or sex designated at birth), more advanced linguistic variants correspond to lower levels of pre-natal T, and perhaps other androgens (esp. women).
+%	\item If the gender effect in language is purely social, then we should see no effect of hormones within each sex (only between sexes).
+%\end{itemize}
+%\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
@@ -300,9 +262,6 @@ Probably due to the small sample size, a permutation test (randomly permuting su
 
 \section*{Conclusions}
 
-\begin{itemize}
-\item 
-\end{itemize}
 
 \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 
@@ -310,7 +269,12 @@ Probably due to the small sample size, a permutation test (randomly permuting su
  %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
+
+\includegraphics[width = 1\linewidth]{figures/possible_causes.pdf}
+
 \end{multicols}
+
+\clearpage
 %\nocite{*} % Print all references regardless of whether they were cited in the poster or not
 \bibliographystyle{linquiry2} % Plain referencing style
 \bibliography{posterrefs} % Use the example bibliography file sample.bib
