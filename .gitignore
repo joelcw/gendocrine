@@ -4,3 +4,7 @@
 *.out
 *.blg
 *.synctex.gz
+.Rproj.user
+*.Rproj
+*.RData
+*.Rhistory
