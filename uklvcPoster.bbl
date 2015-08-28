@@ -1,0 +1,64 @@
+\begin{thebibliography}{9}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Auyeung et~al.(2009)Auyeung, Baron-Cohen, Ashwin, Knickmeyer, Taylor,
+  Hackett, and Hines}]{auyeungetal2009}
+Auyeung, Bonnie, Simon Baron-Cohen, Emma Ashwin, Rebecca Knickmeyer, Kevin
+  Taylor, Gerald Hackett, and Melissa Hines. 2009.
+\newblock Fetal testosterone predicts sexually differentiated childhood
+  behavior in girls and in boys.
+\newblock {\em Psychological Science\/} 20:144--148.
+
+\bibitem[{Balthazart(2011)}]{balthazart2011}
+Balthazart, Jacques. 2011.
+\newblock {\em The {B}iology of {H}omosexuality\/}.
+\newblock Oxford: Oxford University Press.
+
+\bibitem[{Berenbaum and Bailey(2003)}]{berenbaumbailey2003}
+Berenbaum, Sheri~A, and J~Michael Bailey. 2003.
+\newblock Effects on gender identity of prenatal androgens and genital
+  appearance: evidence from girls with congenital adrenal hyperplasia.
+\newblock {\em The Journal of Clinical Endocrinology \& Metabolism\/}
+  88:1102--1106.
+
+\bibitem[{Eckert(2011)}]{eckert2011}
+Eckert, Penelope. 2011.
+\newblock language and power in the preadolescent heterosexual market.
+\newblock {\em American Speech\/} 86:85--97.
+
+\bibitem[{Hines(2006)}]{hines2006}
+Hines, Melissa. 2006.
+\newblock Prenatal testosterone and gender-related behaviour.
+\newblock {\em European Journal of Endocrinology\/} 155:S115--S121.
+
+\bibitem[{Hines et~al.(2004)Hines, Brook, and Conway}]{hinesetal2004}
+Hines, Melissa, Charles Brook, and Gerard~S. Conway. 2004.
+\newblock Androgen and psychosexual development: Core gender identity, sexual
+  orientation, and recalled childhood gender role behavior in women and men
+  with congenital adrenal hyperplasia ({CAH}).
+\newblock {\em Journal of {S}ex {R}esearch\/} 41:75--81.
+
+\bibitem[{Hines et~al.(2002)Hines, Golombok, Rust, Johnston, Golding, Parents,
+  Team, et~al.}]{hinesetal2002}
+Hines, Melissa, Susan Golombok, John Rust, Katie~J Johnston, Jean Golding,
+  Parents, Children~Study Team, et~al. 2002.
+\newblock Testosterone during pregnancy and gender role behavior of preschool
+  children: a longitudinal, population study.
+\newblock {\em Child development\/} 73:1678--1687.
+
+\bibitem[{Labov(2001)}]{labov2001}
+Labov, William. 2001.
+\newblock {\em {P}rinciples of {L}inguistic {C}hange. {V}olume 2: {S}ocial
+  {F}actors\/}.
+\newblock Oxford: Blackwell.
+
+\bibitem[{Zimman et~al.(2014)Zimman, Davis, and Raclaw}]{zimmanetal2014}
+Zimman, Lal, Jenny Davis, and Joshua Raclaw, ed. 2014.
+\newblock {\em Queer excursions: Retheorizing binaries in language, gender, and
+  sexuality\/}.
+\newblock Oxford University Press.
+
+\end{thebibliography}
