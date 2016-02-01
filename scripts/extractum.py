@@ -23,26 +23,26 @@ name = lines[0].split()[1]
 
 interviewee = []
 
-#All transcribed instances of um/uh, ignoring case
+#All transcribed instances of um/uh, ignoring case. Note that this also includes "er", because that is theoretically ambiguous in UK dialects. "em" shouldn't actually occur in the transcriptions at all, but it's included just in case.
 
-filledpause = re.compile("^[Uu][mh]$")
+filledpause = re.compile("^(([Uu][mh])|([Ee][rm]))$")
 
 #annotations for pause preceding 
 
-precpause = re.compile("(\{BR\})|(\{CG\})|(\{LS\})|(\{LG\})|([\.\,])$")
+precpause = re.compile("((\{BR\})|(\{CG\})|(\{LS\})|(\{LG\})|([\.\,]))$")
 
-#annotation for pause following 
+#annotation for pause following ; note that the extra set of parens is important so that the caret scopes over the disjunction
 
-folpause = re.compile("^(\{BR\})|(\{CG\})|(\{LS\})|(\{LG\})|([\.\,])")
+folpause = re.compile("^((\{BR\})|(\{CG\})|(\{LS\})|(\{LG\})|([\.\,]))")
 
 #regex for a filled pause with a comma or period following; this is used to insert a space between the um/uh and the comma/period.
 
-commaregex = re.compile("([Uu][mh])([,\.])")
+commaregex = re.compile("(([Uu][mh])|([Ee][rm]))([,\.])")
 
 #Inserts space between um/uh and comma/period
 
 def comma(matchobj):
-    return ("%s %s" % (matchobj.group(1),matchobj.group(2)))
+    return ("%s %s" % (matchobj.group(1),matchobj.group(4)))
 
 
 #Remember to output everything in lower case
