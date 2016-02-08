@@ -22,6 +22,7 @@
 \usepackage{lmodern}
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{booktabs}
 %\usepackage{pdfpages}
 
 
@@ -133,19 +134,13 @@
 %	\end{center}
 \end{frame}
 
-\begin{frame}
-\frametitle{[u:] vs. [\textipa{2}\textipa{0}] \citep{smithetal2007}}
-\begin{center}
-\includegraphics[scale = .73]{smith1.png}
-\end{center}
-\end{frame}
 
 \begin{frame}{\citet{eckert2011}}
 	\begin{enumerate}
 	\item New variant spreads anywhere in the population.
 	\item In pre-adolescence, women figure out which is the new variant.
 	\item Women adopt more of the new variant to distinguish themselves as ``trendy'' in the ``heterosexual marketplace''.
-	\item Change increments in each generation because women continue this bias; implies people have implicit knowledge of the age-vector for a change, and use this in their production \citep[weak evidence from][]{drager2011}.
+	\item Change increments in each generation because women continue this bias; implies people have implicit knowledge of the age-vector for a change \citep[weak evidence from][]{drager2011}.
 	\end{enumerate}
 \end{frame}
 
@@ -156,31 +151,25 @@
 		\item Labov implicates men in retreating (something else pushes change forward).
 		\item Eckert implicates women in pushing change forward (but something else must have spread it initially).
 		\end{itemize}
+	\item Also, one might question any social-signaling explanation: \textsl{um,uh} has lower mutual information for signaling sex than first or last letter of one's first name \citep{fruehwald2015}.
 	\item Perhaps we can get closer to an explanation for some such effect, and while keeping in mind that speakers are unaware of these changes, and may not experience gender in a binary way.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Problems with Labov, Eckert}
-	\begin{itemize}
-	\item Both imply some social awareness of the change as a whole and its trajectory, but this effect specifically shows up in Changes from Below.
-	\item Also, while the effect is significant, the size of the effect is so small that it is not effective social signaling of any kind (in an information theoretical sense), especially towards the middle of the change; \textsl{um,uh} has lower mutual information for signaling sex than first or last letter of one's first name \citep{fruehwald2015}.
-	\item \textbf{Prediction:} men should be 1 generation behind if they run away in 1st generation, or if women drive the change itself (which might be true). Men should be increasingly more behind if they run away many times.
-	\end{itemize}
-\end{frame}
 
 
-\begin{frame}{Blind Social Network (Bloomfield)}
-	\begin{enumerate}
-	\item Change spreads in women first, by chance.
-	\item Men jump on board at the same rate, and they never catch up.
-	\item The change increments in each generation for unknown reasons.
-	\end{enumerate}
-	\begin{itemize}
-	\item Possible problem with acquisition, from caregiver data \citep{smithetal2007}.
-	\item Must assume that there is no real trend for women to lead change from below.
+%\begin{frame}{Blind Social Network (Bloomfield)}
+%	\begin{enumerate}
+%	\item Change spreads in women first, by chance.
+%	\item Men jump on board at the same rate, and they never catch up.
+%	\item The change increments in each generation for unknown reasons.
+%	\end{enumerate}
+%	\begin{itemize}
+%	\item Possible problem with acquisition, from caregiver data \citep{smithetal2007}.
+%	\item Must assume that there is no real trend for women to lead change from below.
 %	\item Prediction: men should be 1 generation behind or less (?), with the lag remaining constant.
-	\end{itemize}
-\end{frame}
+%	\end{itemize}
+%\end{frame}
 
 
 
@@ -205,8 +194,18 @@
 
 \begin{frame}{Hormonal Organising Effects on Gender}
 \begin{itemize}
-	\item \citet{hinesetal2004}: Congenital Adrenal Hyperplasia (CAH) in XX, AFAB individuals has a significant effect on both sexuality and less female-typical/identifying gender identity both in childhood and adulthood, compared to controls. Also male/female-stereotypical toy preference, in \citet{pasterskietal2005}.
-	\item \citet{berenbaumbailey2003}: CAH and parents' identification of ``tomboy'' were significant predictors of gender identity in XX, AFAB individuals aged 18 and younger. (Interestingly, genital appearance was not, even when partly masculinized.)
+	\item \citet{hinesetal2004}: Congenital Adrenal Hyperplasia (CAH) in XX, AFAB individuals has a significant effect on both sexuality and less female-typical/identifying gender identity both in childhood and adulthood, compared to controls.
+	\begin{itemize}
+	\item Also male/female-stereotypical toy preference, in \citet{pasterskietal2005}.
+	\end{itemize}
+	\item \citet{berenbaumbailey2003}: CAH was a significant predictor of gender identity in XX, AFAB individuals aged 18 and younger. (Interestingly, genital appearance was not, even when partly masculinized.)
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hormonal Organising Effects on Gender}
+\begin{itemize}
+
 	\item \citet{hinesetal2002}: In a non-clinical population (ALSPAC \citealt{alspac2001}), found significant effect of maternal testosterone on childhood gender-role behaviour in XX, AFAB individuals aged 3.5, as assessed by the Pre-School Activities Index.
 	\item \citet{auyeungetal2009} confirmed \citet{hinesetal2002}'s results predicting PSAI with amniotic fluid samples, gestation weeks 11-21, sample of 112 male, 100 female.
 	\item Many other human and animal studied have found relationships between perinatal T and gendered behaviour or sexuality \citep[see][for reviews]{cohenbendahanetal2005, hines2006, balthazart2011, hinesetal2015}.
@@ -216,22 +215,34 @@
 \begin{frame}{Social Learning}
 \begin{itemize}
 	\item There are lots of non-human studies showing the result of hormonal organising on brain morphology \citep[e.g. in rats, going back to][]{gorski1978}, sexuality \citep[many references in][Chapts. 3-4]{balthazart2011}, and birdsong \citep[see][for an overview]{balthazartetal2009}.
-	\item There's less explicitly on the effect of hormonal organising on social learning, though this may be implicit in some of the human studies above, and implicit in the birdsong literature (though these do not always distinguish learning from production; see \citealt{balthazartetal2009}).
-	\item \citet{mansukhanietal1996}: zebra finch pair-bonding: 
+	\item There's less explicitly on the effect of hormonal organising on social learning, though:
 		\begin{itemize}
-		\item hormone treatment (synthetic estradiol) significantly affected pair-bonding behaviours in colony tests \textbf{with females also raised in all-female aviaries}.
-		\item \textbf{Interpretation:} the masculinizing, organising changes due to affected the process of learning suitable models for pairing.
+		\item This may be implicit in some of the human studies above
+		\item May be implicit in the birdsong literature (though these do not always distinguish learning from production; see \citealt{balthazartetal2009}).
 		\end{itemize}
+	\item \citet{mansukhanietal1996}: zebra finch pair-bonding...
+%		\begin{itemize}
+%		\item hormone treatment (synthetic estradiol) significantly affected pair-bonding behaviours in colony tests \textbf{with females also raised in all-female aviaries}.
+%		\item \textbf{Interpretation:} the masculinizing, organising changes due to affected the process of learning suitable models for pairing.
+%		\end{itemize}
 
 \end{itemize}
 
+\end{frame}
+
+\begin{frame}{\citet{mansukhanietal1996}}
+\begin{block}{Results}
+\begin{center}
+	\includegraphics[width=.7\textwidth]{figures/gaybirds.png}
+	\end{center}
+\end{block}
 \end{frame}
 
 \begin{frame}{Social Learning}
 \begin{itemize}
 
 	\item Social behaviour: higher amniotic T predicts lower levels of eye-contact with caregivers/adults \citep{lutchmayaetal2002}
-	\item \citet{knickmeyeretal2004}: significant relationship between amniotic T and scores on the ``Children's Communication Checklist'' in pragmatic language use and social relationships (58 children aged 4--4.25).
+	\item \citet{knickmeyeretal2005}: significant relationship between amniotic T and scores on the ``Children's Communication Checklist'' in pragmatic language use and social relationships (58 children aged 4--4.25).
 	\item Some unpublished experimental evidence suggests (Balthazart p.c., citing \citealt{hines2012}):
 		\begin{itemize}
 			\item Non-CAH women tend to mimic female models in an artificial social learning task.
@@ -264,65 +275,200 @@
 \end{frame}
 
 
-\section{Pilot #1}
+\section{Pilot 1}
 
-
-
-
-
-\section{Pilot #2}
 
 \begin{frame}{Sample}
 \begin{itemize}
-	\item 17 participants, all native speakers of English from Tyneside
+	\item 14 participants, all native speakers of English from Tyneside (4 participants overlap with Pilot 2).
 	\item All assigned-female-at-birth (AFAB) and self-identifying as female.
 	\item None have known endocrine disorders, or know their families to have endocrine conditions.
-	\item Similar educational backgrounds: all attended secondary school, nearly all post-university
-	\item Ages between 20-45 years old.
-	
+	\item Similar educational backgrounds: all attended secondary school, all some university
+	\item Ages between 20-30 years old.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Methodology}
 \begin{itemize}
-	\item Standard sociolinguistic interview procedures \citep{tagliamonte2006}; about an hour of speech per participant (interviewers Claire and Joel), recorded digitally on Zoom H4n in WAV.
+	\item Standard sociolinguistic interview procedures \citep{tagliamonte2006}; about an hour of speech per participant (interviewers Claire, Joel, and Annie Karatzenis), recorded digitally on Zoom H1 or H4n in wav.
 		\begin{itemize}
 			\item Basic personal and social history, including social network size (not analyzed yet).
-			\item Asked whether or not they were called ``tomboy''
+			\item Module on sexuality and sexual history (not used).
+			\item Module on gender identity (not used).
+		\end{itemize}
+	\item \textsl{um, uh} automatically extracted from transcripts, plus some phonological environment information.
+	\item 2D:4D digit ratio: Annie's 10 participants done by hand-tracings, remaining 4 with photocopies of right hands, 2D, 4D measured with Vernier digital calipers (Joel); \citet{allawayetal2009} found this to be the second-best method.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{2D:4D ratio as proxy for pre-natal T}
+\begin{itemize}
+	%\item Broadly speaking, female ratios closer to 1, on average around 0.973, and male ratios smaller, average: 0.955 \citep[][107]{balthazart2011}.
+	
+	\item Sexual orientation: see extensive references in \citet{balthazart2011}, as well as rat models.
+	\item 2D/4D difference in ``butch'' vs. ``femme'' self-report (gender?) in self-identified lesbians, with ``femme'' non-distinct from straight controls, but ``butch'' more masculinized \citep{brownetal2002}
+	\item Experimentally manipulated in Wistar rats: maternal testosterone manipulation and direct pre-natal manipulation results in lower 2D/4D ratios in female rats, and also behavioral similarities to male rats in open field motor activity.\citep{talarovicovaetal2009}.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{2D:4D ratio as proxy for pre-natal T}
+\begin{itemize}
+	%\item Broadly speaking, female ratios closer to 1, on average around 0.973, and male ratios smaller, average: 0.955 \citep[][107]{balthazart2011}.
+	\item \citet{lutchmayaetal2004} found 2D:4D ratio reflected amniotic T/E ratio in 33 two-year-olds in \textbf{right hands}, using photocopies.
+	\item (Note: effects are consistently more pronounced on right hands in both humans and rodents, as in \citealt{brownetal2002} and \citealt{talarovicovaetal2009}; see also review in \citealt{cohenbendahanetal2005}).
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{2D:4D ratio: smaller $\rightarrow$ more pre-natal T (or T/E)}
+%\begin{center}
+	\includegraphics[width=1.12\textwidth]{figures/realhands2.jpg}
+%\end{center}
+\end{frame}
+
+
+\begin{frame}{Results of Pilot 1}
+%\begin{center}
+\includegraphics[width=1.12\textwidth]{figures/fingereffect.pdf}
+%\end{center}
+\end{frame}
+
+
+\begin{frame}{Results of Pilot 1}
+\begin{itemize}
+\item 1,000 bootstrap replicates produce a CI that excludes 0: (0.095,  2.567), and a permutation test (10,000 permutations) yields $p$ = 0.0563.
+\end{itemize}
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+	model & AIC & BIC & LR p-value\\
+	\cmidrule{2-4}
+without ratio & 813.14 & 842.64 & -- \\
+with ratio &  811.36 & 845.79 & 0.052\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}{Results of Pilot 1}
+\noindent Effect size in a mixed effects logistic regression: the same order of magnitude as female effect in other spoken corpora. (Wieling et al, \textsl{forthcoming})
+\begin{center}
+\begin{tabular}{l r}
+\toprule
+\textbf{Sample} & \textbf{Effect Size}\\
+\midrule
+Female effect, HCRC Maptask & 2.3\\
+Female effect,Fischer Corpus & 1.37\\
+Female effect, PNC & 1.31\\
+\textbf{Finger Ratio, our Pilot 1} & \textbf{1.12}\\
+Female effect, Switchboard Corpus & 1.03\\
+Female effect, British National Corpus & 0.45\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+
+\section{Pilot 2}
+
+
+\begin{frame}{Sample}
+\begin{itemize}
+	\item 17 participants, all native speakers of English from Tyneside (4 overlap with Pilot 1).
+	\item All assigned-female-at-birth (AFAB) and self-identifying as female.
+	\item None have known endocrine disorders, or know their families to have endocrine conditions.
+	\item Similar educational backgrounds: all attended secondary school, nearly all some university.
+	\item Ages between 20-45 years old.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Methodology}
+\begin{itemize}
+	\item Standard sociolinguistic interview; > an hour of speech per participant (interviewers Claire and Joel), recorded digitally on Zoom H4n in wav.
+		\begin{itemize}
+			\item Basic personal and social history, including social network size (not analyzed yet).
+			%\item Asked whether or not they were called ``tomboy''
 			\item Module on sexuality and sexual history, coded later in Kinsey scores (0-6) by Joel
 			\item Module on gender identity.
 			\item Transcribed (Claire, Caitlin, Charlotte).
 		\end{itemize}
 	\item \textsl{um, uh} automatically extracted from transcripts, plus some phonological environment information.
-	\item 2D:4D digit ratio: photocopies of right hands, 2D, 4D measured with Vernier digital calipers (Joel); \citet{allawayetal2009} found this to be the second-best method.
+	\item 2D:4D digit ratio: photocopies of right hands, 2D, 4D measured with Vernier digital calipers (Joel).
 	\item Gender scale task, also measured with digital calipers, converted to ratio.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Gender Scale}
-%\begin{center}
+\begin{center}
 	\includegraphics[width=1.12\textwidth]{figures/scale.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Results of Pilot 2: Digit vs. \textsl{um,uh}}
+%\begin{center}
+\includegraphics[width=1.12\textwidth]{figures/fingereffect.pdf}
 %\end{center}
 \end{frame}
 
-\begin{frame}{2D:4D ratio as proxy for pre-natal T}
+
+\begin{frame}{Results of Pilot 2 (excluding an outlier)}
 \begin{itemize}
-	\item Broadly speaking, female ratios closer to 1, on average around 0.973, and male ratios smaller, average: 0.955 \citep[][107]{balthazart2011}.
-	
-	\item Sexual orientation: see extensive references in \citet{balthazart2011}, as well as rat models.
-	\item 2D/4D difference in ``butch'' vs. ``femme'' self-report (gender?) in self-identified lesbians, with ``femme'' non-distinct from straight controls, but ``butch'' more masculinized \citep{brownetal2002}
-	\item Experimentally manipulated in Wistar rats: maternal testosterone manipulation and direct pre-natal manipulation results in lower 2D/4D ratios in female rats, and also behavioral similarities to male rats in open field motor activity\citep{talarovicovaetal2009}.
-	\item \citet{lutchmayaetal2004} found 2D:4D ratio reflected amniotic T/E ratio in 33 two-year-olds in \textbf{right hands}, using photocopies.
-	\item (Note: effects are consistently more pronounced on right hands in both humans and rodents, as in \citet{brownetal2002} and \citet{talarovicovaetal2009}; see also review in \citet{cohenbendahanetal2005}.
+\item A permutation test (10,000 permutations) yields $p$ = stuff.
 \end{itemize}
-
-\end{frame}
-
-\begin{frame}{2D:4D ratio: more to less pre-natal T (or T/E)}
 \begin{center}
-	\includegraphics[width=1.12\textwidth]{figures/realhands2.jpg}
+\begin{tabular}{rrrr}
+\toprule
+	model & AIC & BIC & LR p-value\\
+	\cmidrule{2-4}
+without ratio & 1484.0 & 1518.1 & -- \\
+with ratio &  1483.6 & 1512.1 & 0.1997\\
+\bottomrule
+\end{tabular}
 \end{center}
+
 \end{frame}
+
+\begin{frame}{Results of Pilot 2: Gender Scale vs. \textsl{um,uh}}
+%\begin{center}
+\includegraphics[width=1.12\textwidth]{figures/fingereffect.pdf}
+%\end{center}
+\end{frame}
+
+\begin{frame}{Results of Pilot 2: Digit Ratio vs. Gender Scale}
+%\begin{center}
+\includegraphics[width=1.12\textwidth]{figures/fingereffect.pdf}
+%\end{center}
+\end{frame}
+
+
+\begin{frame}{Results of Pilot 2}
+\noindent Effect size in a mixed effects logistic regression: the same order of magnitude as female effect in other spoken corpora. (Wieling et al, \textsl{forthcoming})
+\begin{center}
+\begin{tabular}{l r}
+\toprule
+\textbf{Sample} & \textbf{Effect Size}\\
+\midrule
+\textbf{Finger Ratio, our Pilot 2} & \textbf{2.44}\\
+Female effect, HCRC Maptask & 2.3\\
+Female effect,Fischer Corpus & 1.37\\
+Female effect, PNC & 1.31\\
+\textbf{Finger Ratio, our Pilot 1} & \textbf{1.12}\\
+Female effect, Switchboard Corpus & 1.03\\
+Female effect, British National Corpus & 0.45\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+
 
 
 \section{Our (Future) Study}
@@ -331,35 +477,10 @@
 \begin{itemize}
 	\item A sample of 200 participants from ALSPAC
 	\item Assays for maternal T and estradiol. (To the extent possible, we will sample the same participants studied in \citealt{hinesetal2002}). 
-	\item Standard sociolinguistic interview procedures \citep{tagliamonte2006}; about an hour of speech per participant.
+	\item Standard sociolinguistic interview procedures.
 	\item Semi-automatic extraction of changes in progress from transcribed audio.
-	\item 2D:4D from scans using virtual calipers in pixels, sexuality info, gender info.
+	\item 2D:4D from scans using virtual calipers in pixels, sexuality info, gender info, using whichever self-report mechanisms seem to be most reliable.
 \end{itemize}
-\end{frame}
-
-\begin{frame}{Future Study}
-\begin{itemize}
-	
-	\item Nice categorical change from below: \textsl{um/uh}
-	\item Some below-consciousness phonetic and phonological variables (maybe production and perception), such as:
-			\begin{itemize}
-			\item /uw/-fronting
-			\item Pre-aspiration
-			\item Amount of coarticulation across word-boundaries
-			\item ultrasound /r/
-			\item VOT?
-%			\item perceptual compensation for coarticulation (relating to social learning?)
-			
-			\end{itemize}
-	\item Maybe a more stable, sociolinguistically sensitive variable, e.g. h-dropping?
-	\item If possible, a syntactic variable (relative clause extraposition?; Wallenberg \textsl{to appear})
-
-	\item Some self-report gender identity measures.
-		\begin{itemize}
-			\item Worth seeing if there are openly gender-nonconforming people in ALSPAC.
-		\end{itemize}
-		\end{itemize}
-
 \end{frame}
 
 
@@ -389,16 +510,15 @@
 \begin{frame}{Conclusions}
 %	\begin{block}{Conclusions}
 		\begin{itemize}
-			\item There's no clear explanation of the linguistic effects in ``purely social'' terms, though there are a few ideas.
-			\item Biological explanations have generally been dismissed.
-			\item Hormonal organising action suggests a partly biological, partly social model, with the following properties:
+			\item There's no clear explanation of the linguistic effects, though there are a few ideas.
+			\item Hormonal organising effects suggests a partly biological, partly social model, with the following properties:
 		\begin{itemize}
 			\item It could explain both sex/gender effects based on independently attested mechanisms.
 			\item The view of gender is interestingly non-binary or gradient, which tallies with people's self-reports of gender identity.
 			\end{itemize}
-			\item Though we'd like more independent data on social learning, this study could provide additional evidence.
+			%\item Though we'd like more independent data on social learning, this study could provide additional evidence.
 			\item Linguistic productions could be a more precise measure of social learning, than rougher questionnaire and experimental techniques.
-		
+			\item Question: how much does this have to do with gender, after all?
 	\end{itemize}
 %	\end{block}
 \end{frame}
@@ -409,7 +529,9 @@
 \begin{frame}{Acknowledgements}
 \begin{center}
 
-Special thanks to Jacques Balthazart, for being highly available; to my collaborators, Joe Fruehwald, Danielle Turton, and our student Anne-Marie Karatzenis; Daniel Nettle and Tom Smulders. Bonnie Auyeung. Claire Cochrane, Caitlin Halfacre, Charlotte Huggins.
+Special thanks to Jacques Balthazart, for being highly available; to our past student Anne-Marie Karatzenis; To Daniel Nettle, Tom Smulders, and Bonnie Auyeung for discussion. To our RAs Claire Cochrane, Caitlin Halfacre, Charlotte Huggins.
+
+A number of individuals in the Newcastle transgender community have graciously given their input into how we ask for gender self-reports.
 
 %\vspace{5mm}\\
 %Simulation: \texttt{github.com/joelcw/tyneside/blob/master/articles/sim\_Gauss.R}
@@ -470,12 +592,6 @@ Special thanks to Jacques Balthazart, for being highly available; to my collabor
 \end{block}
 \end{frame}
 
-\begin{frame}{\citet{mansukhanietal1996}}
-\begin{block}{Results}
-\begin{center}
-	\includegraphics[width=.7\textwidth]{gaybirds.png}
-	\end{center}
-\end{block}
-\end{frame}
+
 
 \end{document}
