@@ -64,3 +64,10 @@ ggplot(tomboys, aes(lnRight, test)) + scale_y_continuous(name = "Probability: To
 
 
 #Trying my first boxplot
+
+tomboys$id <- ifelse(tomboys$yesOrNo == 1, "Tomboy","Not Tomboy")
+
+p <- ggplot(tomboys, aes(id,lnRight, group=id)) + scale_y_continuous(name = "ln(right hand 2D:4D ratio)") + scale_x_discrete(name = "\nParticipant Group") + geom_point() + geom_boxplot(fill="red") + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(width = 0.3)
+
+ggsave(p, file = "~/gendocrine/figures/tomboysBoxplot.pdf", width = 8, height = 5)
+
