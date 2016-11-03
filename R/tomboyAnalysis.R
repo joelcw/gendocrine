@@ -51,9 +51,9 @@ anova(tomboys.fit3, test = "Chisq")
 
 tomboys$test <- tomboys$yesOrNo
 
-p <- ggplot(tomboys, aes(lnRight, yesOrNo)) + scale_y_continuous(name = "Probability: Tomboy Or Not?", breaks=seq(0,1,by=0.1), labels=c("Not Tomboy",seq(0.1,0.9,by = 0.1),"Tomboy") ) + scale_x_continuous(name = "\nln(right hand 2D:4D ratio)")  + geom_point() + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + scale_color_brewer(palette = "Dark2") + geom_jitter(height = 0.1) + geom_smooth(alpha = 0.2, method="glm",method.args = list(family = "binomial"),fullrange=T) 
+p <- ggplot(tomboys, aes(lnRight, yesOrNo)) + scale_y_continuous(name = "Probability: Tomboy Or Not?", breaks=seq(0,1,by=0.1), labels=c("Not Tomboy",seq(0.1,0.9,by = 0.1),"Tomboy") ) + scale_x_continuous(name = "\nln(right hand 2D:4D ratio)")  + geom_point() + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(height = 0.1) + geom_smooth(alpha = 0.2, method="glm",method.args = list(family = "binomial"),fullrange=T, colour="red")
 
-ggsave(p, file = "~/gendocrine/tomboysUnbinnedLogistic.pdf", width = 8, height = 5)
+ggsave(p, file = "~/gendocrine/figures/tomboysUnbinnedLogisticRed.pdf", width = 8, height = 5)
 
 #fuckin around with splines
 
@@ -61,3 +61,6 @@ library(splines)
 library(MASS)
 
 ggplot(tomboys, aes(lnRight, test)) + scale_y_continuous(name = "Probability: Tomboy Or Not?", breaks=seq(0,1,by=0.1), labels=c("Not Tomboy",seq(0.1,0.9,by = 0.1),"Tomboy") ) + scale_x_continuous(name = "\nln(right hand 2D:4D ratio)")  + geom_smooth(alpha = 0.2, method="gam",formula = y ~ ns(x,3),fullrange=T) + scale_alpha_continuous(guide="none", limits = c(0,.9)) + scale_color_brewer(palette = "Dark2") + theme_bw() + theme(panel.border = element_blank()) + geom_point() 
+
+
+#Trying my first boxplot
