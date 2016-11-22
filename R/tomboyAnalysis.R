@@ -51,9 +51,9 @@ anova(tomboys.fit3, test = "Chisq")
 
 tomboys$test <- tomboys$yesOrNo
 
-p <- ggplot(tomboys, aes(lnRight, yesOrNo)) + scale_y_continuous(name = "Probability: Tomboy Or Not?", breaks=seq(0,1,by=0.1), labels=c("Not Tomboy",seq(0.1,0.9,by = 0.1),"Tomboy") ) + scale_x_continuous(name = "\nln(right hand 2D:4D ratio)")  + geom_point() + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(height = 0.1) + geom_smooth(alpha = 0.2, method="glm",method.args = list(family = "binomial"),fullrange=T, colour="red")
+p <- ggplot(tomboys, aes(lnRight, yesOrNo)) + scale_y_continuous(name = "Probability: Tomboy Or Not?", breaks=seq(0,1,by=0.1), labels=c("Not Tomboy",seq(0.1,0.9,by = 0.1),"Tomboy") ) + scale_x_continuous(name = "\nln(right hand 2D:4D ratio)")  + geom_point() + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(height = 0.1) + geom_smooth(alpha = 0.2, method="glm",method.args = list(family = "binomial"),fullrange=T, colour="purple")
 
-ggsave(p, file = "~/gendocrine/figures/tomboysUnbinnedLogisticRed.pdf", width = 8, height = 5)
+ggsave(p, file = "~/gendocrine/figures/tomboysPurple.pdf", width = 8, height = 5)
 
 #fuckin around with splines
 
@@ -67,7 +67,7 @@ ggplot(tomboys, aes(lnRight, test)) + scale_y_continuous(name = "Probability: To
 
 tomboys$id <- ifelse(tomboys$yesOrNo == 1, "Tomboy","Not Tomboy")
 
-p <- ggplot(tomboys, aes(id,lnRight, group=id)) + scale_y_continuous(name = "ln(right hand 2D:4D ratio)") + scale_x_discrete(name = "\nParticipant Group") + geom_point() + geom_boxplot(fill="red") + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(width = 0.3)
+p <- ggplot(tomboys, aes(id,lnRight, group=id)) + scale_y_continuous(name = "ln(right hand 2D:4D ratio)") + scale_x_discrete(name = "\nParticipant Group") + geom_point() + geom_boxplot(fill=c("purple","green")) + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(width = 0.3)
 
 ggsave(p, file = "~/gendocrine/figures/tomboysBoxplot.pdf", width = 8, height = 5)
 
