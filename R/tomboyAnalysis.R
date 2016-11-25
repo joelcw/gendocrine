@@ -5,18 +5,20 @@ library(lme4)
 library(RColorBrewer)
 library(gam)
 
-tomboys <- read.csv("gendocrine/datasets/BethTomboyDataset.csv")
+tomboys <- read.csv("gendocrine/datasets/tomboys.csv")
+
+
 
 
 #Recoding tomboy column in a standard way for binary variables
-
-tomboys$yesOrNo <- ifelse(tomboys$Tomboy == 2, 0,1)
-tomboys$yesOrNo <- as.numeric(as.character(tomboys$yesOrNo))
+#tomboys$yesOrNo <- ifelse(tomboys$Tomboy == 2, 0,1)
+#tomboys$yesOrNo <- as.numeric(as.character(tomboys$yesOrNo))
 
 
 #Zing the age predictor just in case
 
 tomboys$zAge <- scale(tomboys$Age, center=TRUE, scale=TRUE)
+
 
 #log-ing the finger ratio; I use natural log here
 
@@ -26,7 +28,7 @@ tomboys$lnLeft <- log(tomboys$LeftHand)
 
 #writing dataset to file
 
-write.csv(tomboys, file="~/gendocrine/datasets/tomboys.csv", row.names = FALSE)
+#write.csv(tomboys, file="~/gendocrine/datasets/tomboys.csv", row.names = FALSE)
 
 #logistic model
 
@@ -34,17 +36,44 @@ tomboys.fit <- glm(yesOrNo~lnRight*zAge, family = binomial, data=tomboys)
 summary(tomboys.fit)
 anova(tomboys.fit, test = "Chisq")
 
-#taking Age out, as it doesnt seem to do anything 
+
+
+#model without Age 
 
 tomboys.fit2 <- glm(yesOrNo~lnRight, family = binomial, data=tomboys)
 summary(tomboys.fit2)
 anova(tomboys.fit2, test = "Chisq")
 
-#same with left hand 
+#model with main effect of Age, but no interaction
+
+tomboys.fit4 <- glm(yesOrNo~lnRight+Age, family = binomial, data=tomboys)
+summary(tomboys.fit4)
+
+
+
+#AIC and BIC for model comparison: main effect of Age, and interaction with Age
+
+AIC(tomboys.fit2) - AIC(tomboys.fit)
+BIC(tomboys.fit2) - BIC(tomboys.fit)
+
+AIC(tomboys.fit2) - AIC(tomboys.fit4)
+BIC(tomboys.fit2) - BIC(tomboys.fit4)
+
+
+
+
+#Mann-Whitney-Wilcoxon U Test
+
+wilcox.test(yesOrNo~lnRight, data=tomboys)
+
+
+#same logistic model with left hand 
 
 tomboys.fit3 <- glm(yesOrNo~lnLeft, family = binomial, data=tomboys)
 summary(tomboys.fit3)
 anova(tomboys.fit3, test = "Chisq")
+
+
 
 
 #plot, unbinned data, with logistic and gam
