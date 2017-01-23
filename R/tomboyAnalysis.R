@@ -5,7 +5,7 @@ library(lme4)
 library(RColorBrewer)
 library(gam)
 
-tomboys <- read.csv("gendocrine/datasets/tomboys.csv")
+tomboys <- read.csv("gendocrine/datasets/tomboys.csv", strip.white = TRUE)
 
 
 
@@ -64,7 +64,7 @@ BIC(tomboys.fit2) - BIC(tomboys.fit4)
 
 #Mann-Whitney-Wilcoxon U Test
 
-wilcox.test(yesOrNo~lnRight, data=tomboys)
+wilcox.test(lnRight~yesOrNo, data=tomboys)
 
 
 #same logistic model with left hand 
@@ -80,9 +80,9 @@ anova(tomboys.fit3, test = "Chisq")
 
 tomboys$test <- tomboys$yesOrNo
 
-p <- ggplot(tomboys, aes(lnRight, yesOrNo)) + scale_y_continuous(name = "Probability: Tomboy Or Not?", breaks=seq(0,1,by=0.1), labels=c("Not Tomboy",seq(0.1,0.9,by = 0.1),"Tomboy") ) + scale_x_continuous(name = "\nln(right hand 2D:4D ratio)")  + geom_point() + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(height = 0.1) + geom_smooth(alpha = 0.2, method="glm",method.args = list(family = "binomial"),fullrange=T, colour="purple")
+p <- ggplot(tomboys, aes(lnRight, yesOrNo)) + scale_y_continuous(name = "Probability: Tomboy Or Not?", breaks=seq(0,1,by=0.1), labels=c("Not Tomboy",seq(0.1,0.9,by = 0.1),"Tomboy") ) + scale_x_continuous(name = "\nln(right hand 2D:4D ratio)")  + geom_point() + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(height = 0.1) + geom_smooth(alpha = 0.2, method="glm",method.args = list(family = "binomial"),fullrange=T, colour="red")
 
-ggsave(p, file = "~/gendocrine/figures/tomboysPurple.pdf", width = 8, height = 5)
+ggsave(p, file = "~/gendocrine/figures/tomboysUnbinnedLogisticRed.ps", width = 8, height = 5)
 
 #fuckin around with splines
 
@@ -98,5 +98,48 @@ tomboys$id <- ifelse(tomboys$yesOrNo == 1, "Tomboy","Not Tomboy")
 
 p <- ggplot(tomboys, aes(id,lnRight, group=id)) + scale_y_continuous(name = "ln(right hand 2D:4D ratio)") + scale_x_discrete(name = "\nParticipant Group") + geom_point() + geom_boxplot(fill=c("purple","green")) + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(width = 0.3)
 
-ggsave(p, file = "~/gendocrine/figures/tomboysBoxplot.pdf", width = 8, height = 5)
+ggsave(p, file = "~/gendocrine/figures/tomboysBoxplot.ps", width = 8, height = 5)
 
+
+
+
+#tomboys <- read.csv("CurrentLx/gender/tomboyArticleStuff/tomboysWithEthnicity.csv", strip.white=TRUE)
+#colnames(tomboys)[20] <- "Ethnicity"
+
+#Analysis including ethnicity
+
+#model without Age, without Ethnicity 
+
+tomboysNoEth.fit <- glm(yesOrNo~lnRight, family = binomial, data=tomboys)
+summary(tomboysNoEth.fit)
+anova(tomboysNoEth.fit, test = "Chisq")
+
+#above model with Ethnicity
+
+tomboysEth.fit <- glm(yesOrNo~lnRight*Ethnicity, family = binomial, data=tomboys)
+summary(tomboysEth.fit)
+anova(tomboysEth.fit, test = "Chisq")
+
+AIC(tomboysNoEth.fit) - AIC(tomboysEth.fit)
+BIC(tomboysNoEth.fit) - BIC(tomboysEth.fit)
+
+
+tomboysEth2.fit <- glm(yesOrNo~lnRight+Ethnicity, family = binomial, data=tomboys)
+summary(tomboysEth2.fit)
+anova(tomboysEth2.fit, test = "Chisq")
+
+AIC(tomboysNoEth.fit) - AIC(tomboysEth2.fit)
+BIC(tomboysNoEth.fit) - BIC(tomboysEth2.fit)
+
+
+#Trying with whites only
+
+tomboysWhites <- subset(tomboys, Ethnicity == "white")
+
+library(gdata)
+
+tomboysWhites <- droplevels(tomboysWhites)
+
+tomboysWhites.fit <- glm(yesOrNo~lnRight, family = binomial, data=tomboysWhites)
+summary(tomboysWhites.fit)
+anova(tomboysWhites.fit, test = "Chisq")
