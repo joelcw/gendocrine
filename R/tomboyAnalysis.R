@@ -5,6 +5,8 @@ library(lme4)
 library(RColorBrewer)
 library(gam)
 
+
+
 tomboys <- read.csv("gendocrine/datasets/tomboys.csv", strip.white = TRUE)
 
 
@@ -14,6 +16,7 @@ tomboys <- read.csv("gendocrine/datasets/tomboys.csv", strip.white = TRUE)
 #tomboys$yesOrNo <- ifelse(tomboys$Tomboy == 2, 0,1)
 #tomboys$yesOrNo <- as.numeric(as.character(tomboys$yesOrNo))
 
+#Note that the various extra columns added below, zAge, lnRight, lnLeft, are already in the dataset above, but I've included these commands so that you can see what I've done.
 
 #Zing the age predictor just in case
 
@@ -143,3 +146,46 @@ tomboysWhites <- droplevels(tomboysWhites)
 tomboysWhites.fit <- glm(yesOrNo~lnRight, family = binomial, data=tomboysWhites)
 summary(tomboysWhites.fit)
 anova(tomboysWhites.fit, test = "Chisq")
+
+
+#Adding men to the box plot:
+
+men <- read.csv("CurrentLx/gender/tomboyArticleStuff/men.csv", strip.white=TRUE)
+
+colnames(men)[1] <- "Participant"
+colnames(men)[6] <- "rightHand"
+colnames(men)[8] <- "LeftHand"
+
+men$lnRight <- log(men$rightHand)
+
+men$lnLeft <- log(men$LeftHand)
+
+plottomboys <- data.frame(tomboys$Participant,tomboys$lnRight,tomboys$id, stringsAsFactors=FALSE, check.names=TRUE)
+colnames(plottomboys) <- c("Participant","lnRight","id")
+
+men$id <- "Men"
+
+plotmen <- data.frame(men$Participant,men$lnRight,men$id, stringsAsFactors=FALSE, check.names=TRUE)
+colnames(plotmen) <- c("Participant","lnRight","id")
+
+plotboys <- rbind(plottomboys,plotmen)
+  
+
+p <- ggplot(plotboys, aes(id,lnRight, group=id)) + scale_y_continuous(name = "ln(right hand 2D:4D ratio)") + scale_x_discrete(name = "\nParticipant Group") + geom_point() + geom_boxplot(fill=c("purple","green","yellow")) + theme_bw() + theme(panel.border = element_blank()) + geom_jitter(width = 0.3)
+
+ggsave(p, file = "~/gendocrine/figures/tomboysMenBoxplot.ps", width = 8, height = 5)
+
+#Getting an effect size for men
+
+plotboys$Sex <- ifelse(plotboys$id == "Men", "Men","Women")
+
+tomboysMen.fit <- glm(Sex~lnRight, family = binomial, data=plotboys)
+summary(tomboysMen.fit)
+anova(tomboysMen.fit, test = "Chisq")
+
+
+#Mann-Whitney-Wilcoxon U Test for men vs. women
+
+wilcox.test(lnRight~Sex, data=plotboys)
+
+write.csv(plotboys, file="~/gendocrine/datasets/tomboysWithMen.csv", row.names = FALSE)
