@@ -1,4 +1,4 @@
-Speaker,Age,digitRatio,Interviewer,Ethnicity,TomboyYorN
+Speaker,Age,digitRatio,Interviewer,digitMethod,Ethnicity,TomboyYorN
 Lucy,30,1.0588,Joel,digital,White,Y
 Fred,21,0.943,Joel,digital,SAsian,Y
 Amy,33,0.945,Joel,digital,White,N
