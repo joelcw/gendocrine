@@ -66,9 +66,7 @@ qqplot(fulldata.df[fulldata.df$subseg=="pre",]$logDigit,fulldata.df[fulldata.df$
 fulldata.df$logDur <- log(fulldata.df$duration/fulldata.df$wordDur)
 
 
-#write new version of data set
 
-write.csv(fulldata.df, file="~/gendocrine/datasets/fullPreAspData10April2017.csv", row.names = FALSE)
 
 #Subsetting because there are some weird annotations in subseg, like "brCOULDbePREaBIT"
 
@@ -77,6 +75,12 @@ fulldata1.df <- subset(fulldata.df,subseg == "pre" | subseg == "br" | subseg == 
 library(gdata)
 
 fulldata1.df <- droplevels(fulldata1.df)
+
+
+#write new version of data set
+
+write.csv(fulldata1.df, file="~/gendocrine/datasets/fullPreAspData10April2017.csv", row.names = FALSE)
+
 
 #using logDur and all subsegs
 
@@ -92,14 +96,13 @@ anova(LogDurNoDigit.fit,simpleLog.fit)
 
 preasp.df <- subset(fulldata.df,subseg == "pre")
 
-library(gdata)
 
 preasp.df <- droplevels(preasp.df)
 
 
 #using logDur and just preasp
 
-LogPreasp.fit <- lmer(logDur ~ V + C1 + logDigit + digitMethod + ethnicity2 + age + interviewer + stress + foot + foll_interval + logDigit*digitMethod + logDigit*ethnicity2 + logDigit*interviewer + age*logDigit + (1|speaker), data=preasp.df, REML=FALSE)
+LogPreasp.fit <- lmer(logDur ~ V + C1 + logDigit + digitMethod + ethnicity2 + age + interviewer + stress + foot + foll_interval + logDigit:digitMethod + logDigit:ethnicity2 + logDigit:interviewer + age:logDigit + (1|speaker), data=preasp.df, REML=FALSE)
 summary(LogPreasp.fit)
 
 LogPreaspNoDigit.fit <- lmer(logDur ~ V + C1 + age + digitMethod + ethnicity2 + interviewer + stress + foot + foll_interval + (1|speaker), data=preasp.df, REML=FALSE)
@@ -113,7 +116,6 @@ anova(LogPreaspNoDigit.fit,LogPreasp.fit)
 
 nonPreasp.df <- subset(fulldata.df,subseg == "br" | subseg == "cr")
 
-library(gdata)
 
 nonPreasp.df <- droplevels(nonPreasp.df)
 
@@ -130,7 +132,6 @@ anova(LogNonPreNoDigit.fit,LogNonPre.fit)
 
 preBr.df <- subset(fulldata.df,subseg == "br" | subseg == "pre")
 
-library(gdata)
 
 preBr.df <- droplevels(preBr.df)
 
@@ -146,8 +147,6 @@ anova(LogPreBrNoDigit.fit,LogPreBr.fit)
 
 cr.df <- subset(fulldata.df,subseg == "cr")
 
-library(gdata)
-
 cr.df <- droplevels(cr.df)
 
 LogCr.fit <- lmer(logDur ~ V + C1 + logDigit + digitMethod + ethnicity2 + age + interviewer + stress + foot + foll_interval + logDigit*digitMethod + logDigit*ethnicity2 + logDigit*interviewer + age*logDigit + (1|speaker), data=cr.df, REML=FALSE)
@@ -159,9 +158,7 @@ summary(LogCr.fit)
 anova(LogCr.fit,LogCrNoDigit.fit)
 
 
-#So, this is really strange, but age and digit ratio are highly correlated...maybe I'll leave each out of a model???
-qqplot(fulldata.df$logDigit,fulldata.df$age)
-qqplot(ratio.df$digitRatio,ratio.df$age)
+
 
 
 
@@ -170,8 +167,6 @@ qqplot(ratio.df$digitRatio,ratio.df$age)
 ratio.df$logDigit <- log(ratio.df$digitRatio)
 age.fit <- lm(age~logDigit, data=ratio.df)
 ratio.df$ageResid <- residuals(age.fit)
-
-qqplot(ratio.df$age,ratio.df$logDigit)
 
 #merging it back into the full data frame
 age.df <- data.frame(ratio.df$speaker,ratio.df$ageResid)
@@ -220,13 +215,13 @@ anova(LogPreaspNoAgeNoDigit.fit,LogPreaspNoAge.fit)
 
 #check age correl
 
-#Subsetting ethnicity to make things simpler
+#Subsetting ethnicity to make things simpler; except this radically changes model fit, which sounds wrong (CAVEAT)
 
 preasp3.df <- subset(preasp2.df,ethnicity2 == "White")
 
 preasp3.df <- droplevels(preasp3.df)
 
-#Final model?? Took out interviewer*logDigit interaction...not sure if that's right:
+#Took out interviewer*logDigit interaction...not sure if that's right:
 
 LogPreaspNoEth.fit <- lmer(logDur ~ V + C1 + stress + foot + foll_interval + logDigit + digitMethod + age + interviewer + logDigit*digitMethod + age*logDigit + (1|speaker), data=preasp3.df, REML=FALSE)
 summary(LogPreaspNoEth.fit)
@@ -237,8 +232,44 @@ summary(LogPreaspNoEthNoDigit.fit)
 anova(LogPreaspNoEthNoDigit.fit,LogPreaspNoEth.fit)
 
 
+
+#Looking at variance of individuals
+
+library(plyr)
+library(dplyr)
+
+#The function below will more or less do the same thing
+#ddply(fulldata1.df,~speaker,summarise,standDev=sd(logDur))
+
+varianceData.df <- aggregate(logDur~speaker+age+ethnicity2+interviewer+logDigit, data=fulldata1.df, sd)
+
+colnames(varianceData.df) <- c("speaker","age","ethnicity2","interviewer","logDigit","sdLogDur")
+
+sd.fit <- lm(sdLogDur ~ ethnicity2 + age + logDigit,  data=varianceData.df)
+
+sdNoDigit.fit <- lm(sdLogDur ~ ethnicity2 + age,  data=varianceData.df)
+
+summary(sd.fit)
+anova(sd.fit,sdNoDigit.fit)
+
+sdSimple.fit <- lm(sdLogDur ~ logDigit,  data=varianceData.df)
+summary(sdSimple.fit)
+
+
+
 #Plots
+library(ggplot2)
+library(RColorBrewer)
 
-p <- ggplot(fulldata, aes(date, FormNum, color=Context, group=Context)) + scale_y_continuous(name = "Proportion Molten (vs. Melted)", breaks=seq(0,1,by=0.1), labels=c("Melted",seq(0.1,0.9,by = 0.1),"Molten") ) + scale_x_continuous(name = "\nYear") + stat_sum(aes(size=..n.., alpha=.2)) + scale_size_area(max_size=12) + stat_smooth(alpha = 0.2) + scale_alpha_continuous(guide="none", limits = c(0,.9)) + scale_color_brewer(palette = "Dark2") + theme_bw() + theme(panel.border = element_blank())
+p <- ggplot(preasp.df, aes(logDigit, logDur)) + scale_y_continuous(name = "ln(preaspiration duration / word duration)") + scale_x_continuous(name = "\nln(right hand digit ratio)") + geom_point() + geom_jitter(height = 0.08) + scale_size_area(max_size=12) + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + stat_smooth( method="lm",fullrange=T, level = 0.95, colour="red")
 
-ggsave(p, file = "~/CurrentLx/OldNorse/gentdigs/FormByDateUnbinnedWithDots2.pdf", width = 8, height = 5)
+ggsave(p, file = "~/gendocrine/figures/digitPreasp.png", width = 8, height = 5)
+
+
+#all subsegs; USE THIS PLOT BECAUSE IT SUGGESTS THAT THE EFFECT IS *NOT* PHYSIOLOGICAL, and not an accident
+
+p <- ggplot(fulldata1.df, aes(logDigit, logDur, color=subseg, group=subseg)) + scale_y_continuous(name = "ln(preaspiration duration / word duration)") + scale_x_continuous(name = "\nln(right hand digit ratio)") + geom_point() + geom_jitter(height = 0.08) + scale_size_area(max_size=12) + scale_alpha_continuous(guide="none", limits = c(0,.9))  + theme_bw() + theme(panel.border = element_blank()) + stat_smooth(method="lm",fullrange=T) + scale_color_brewer(palette = "Set1")
+
+
+
+ggsave(p, file = "~/gendocrine/figures/digitAllSubsegs.png", width = 8, height = 5)
